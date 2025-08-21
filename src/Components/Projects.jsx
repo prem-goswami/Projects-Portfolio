@@ -41,7 +41,7 @@ export const Projects = () => {
       >
         <motion.a
           className="project-card"
-          href="https://curious-travesseiro-f034b3.netlify.app/"
+          href="https://animatedwebsite-zentry.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
           variants={fadeInUp}
@@ -54,13 +54,14 @@ export const Projects = () => {
         >
           <motion.div
             className="project-image"
-            style={{ backgroundImage: "url('/projects/crown-clothing.png')" }}
+            style={{ backgroundImage: "url('/projects/animated-website.png')" }}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           />
-          <h3> AI SaaS Platform</h3>
+          <h3> Animated Website</h3>
           <p>
-            A modern SaaS platform built with Next.js and OpenAI integration,
-            featuring real-time AI-powered content generation and analytics.
+            A modern animated website built with React.js and OpenAI
+            integration, featuring real-time AI-powered content generation and
+            analytics.
           </p>
           <div className="project-tech">
             <span>Next.js</span>
@@ -69,20 +70,28 @@ export const Projects = () => {
           </div>
         </motion.a>
 
-        <motion.div
+        <motion.a
           className="project-card"
           variants={fadeInUp}
           whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          href="https://trendingmoviesreact.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textDecoration: "none",
+          }}
         >
           <motion.div
             className="project-image"
             style={{
-              backgroundImage: "url('/projects/social-media.png')",
+              backgroundImage: "url('/projects/Movies.png')",
             }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           />
-          <h3>Social Media Dashboard</h3>
+          <h3>Trending Movies</h3>
           <p>
             A comprehensive social media management dashboard with analytics,
             scheduling, and engagement tracking features.
@@ -92,32 +101,41 @@ export const Projects = () => {
             <span>Node.js</span>
             <span>MongoDB</span>
           </div>
-        </motion.div>
+        </motion.a>
 
-        <motion.div
+        <motion.a
           className="project-card"
           variants={fadeInUp}
           whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          href="https://corwn-clothing.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textDecoration: "none",
+          }}
         >
           <motion.div
             className="project-image"
             style={{
-              backgroundImage: "url('/projects/stopwatch.png')",
+              backgroundImage: "url('/projects/crown-clothing.png')",
             }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           />
-          <h3>Productivity Timer</h3>
+          <h3>Crown Clothing</h3>
           <p>
-            A sleek productivity timer application with customizable work
-            sessions, statistics tracking, and dark mode support.
+            A sleek e-commerce application for a clothing brand, featuring
+            product listings, shopping cart functionality, and user
+            authentication.
           </p>
           <div className="project-tech">
             <span>React</span>
             <span>TypeScript</span>
             <span>TailwindCSS</span>
           </div>
-        </motion.div>
+        </motion.a>
       </motion.div>
     </motion.section>
   );
