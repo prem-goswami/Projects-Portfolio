@@ -47,7 +47,21 @@ export const NavBar = () => {
           </a>
         </motion.li>
         <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <a variants={fadeInup}>Contact</a>
+          <a variants={fadeInup} href="#contact">
+            Contact
+          </a>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <a
+            href="/projects/Prem-Goswami%20Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View Resume"
+            style={{ display: "flex", alignItems: "center", gap: "6px" }}
+          >
+            <i className="fas fa-file-download" style={{ fontSize: "1.2em" }}></i>
+            Resume
+          </a>
         </motion.li>
       </motion.ul>
     </motion.nav>

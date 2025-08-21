@@ -6,17 +6,26 @@ import { Projects } from "./Components/Projects";
 import { Contact } from "./Components/Contact";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import LoadingScreen from "./Components/LoadingScreen";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    // Simulate loading for 1.5 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
   }, []);
 
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
-    <div className={`app ${isLoading ? "loaded" : ""}`}>
+    <div className="app loaded">
       <NavBar />
       <Hero />
       <Projects />

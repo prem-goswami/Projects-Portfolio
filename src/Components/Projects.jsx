@@ -39,14 +39,22 @@ export const Projects = () => {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        <motion.div
+        <motion.a
           className="project-card"
+          href="https://curious-travesseiro-f034b3.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={fadeInUp}
           whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textDecoration: "none",
+          }}
         >
           <motion.div
             className="project-image"
-            style={{ backgroundImage: "url('/projects/ai-saas.png')" }}
+            style={{ backgroundImage: "url('/projects/crown-clothing.png')" }}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           />
           <h3> AI SaaS Platform</h3>
@@ -59,7 +67,7 @@ export const Projects = () => {
             <span>OpenAI</span>
             <span>TailwindCSS</span>
           </div>
-        </motion.div>
+        </motion.a>
 
         <motion.div
           className="project-card"
