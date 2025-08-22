@@ -33,13 +33,32 @@
 
 .hero-image-container {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 40%;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.portfolioPhoto {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  z-index: 30;
+  object-fit: contain;
+  left: 75%;
+  top: 10px;
+}
+
+.portfolioPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.portfolioPhoto img:hover {
+  transform: scale(1.02);
+}
 .hero-image-container:hover {
-  transform: scale(1.06);
+  transform: scale(1.02);
 }
 
 .hero-badge {
@@ -213,6 +232,9 @@
     gap: 20px;
     margin-bottom: 20px;
   }
+  .portfolioPhoto {
+    display: none;
+  }
 
   .hero-content {
     text-align: center;
@@ -258,6 +280,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+  }
+  .portfolioPhoto {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }
 

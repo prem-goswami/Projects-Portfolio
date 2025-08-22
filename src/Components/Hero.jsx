@@ -87,6 +87,9 @@ export const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
+          <motion.div className="portfolioPhoto">
+            <img src="/projects/PortfolioPic.jpg" alt="Portfolio-Pic" />{" "}
+          </motion.div>
           <motion.div
             className="hero-image-inner"
             whileHover={{ scale: 1.06 }}
@@ -153,14 +156,6 @@ export const Hero = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-        {/* <motion.div
-            className="hero-image-container-2"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <img src="/projects/code-summary.png" alt="Code Summary" />
-          </motion.div> */}
       </div>
     </motion.section>
   );

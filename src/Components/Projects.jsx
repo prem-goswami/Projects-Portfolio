@@ -59,13 +59,14 @@ export const Projects = () => {
           />
           <h3> Animated Website</h3>
           <p>
-            A modern animated website built with React.js and OpenAI
-            integration, featuring real-time AI-powered content generation and
-            analytics.
+            Developed a highly animated, interactive website using
+            scroll-triggered GSAP animations synchronized with audio, delivering
+            a cinematic and immersive user experience with stunning UI/UX design
+            and smooth performance across devices.
           </p>
           <div className="project-tech">
-            <span>Next.js</span>
-            <span>OpenAI</span>
+            <span>React.js</span>
+            <span>GSAP</span>
             <span>TailwindCSS</span>
           </div>
         </motion.a>
@@ -93,13 +94,14 @@ export const Projects = () => {
           />
           <h3>Trending Movies</h3>
           <p>
-            A comprehensive social media management dashboard with analytics,
-            scheduling, and engagement tracking features.
+            A dynamic movie discovery app with API-driven content, optimized
+            with debounced search and responsive UI for a seamless user
+            experience.
           </p>
           <div className="project-tech">
             <span>React</span>
-            <span>Node.js</span>
-            <span>MongoDB</span>
+            <span>Firebase</span>
+            <span>Stripe AP</span>
           </div>
         </motion.a>
 
