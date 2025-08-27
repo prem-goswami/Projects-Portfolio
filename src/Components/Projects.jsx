@@ -67,7 +67,7 @@ export const Projects = () => {
           <div className="project-tech">
             <span>React.js</span>
             <span>GSAP</span>
-            <span>TailwindCSS</span>
+            <span>CSS5</span>
           </div>
         </motion.a>
 
@@ -105,6 +105,40 @@ export const Projects = () => {
           </div>
         </motion.a>
 
+        <motion.a
+          className="project-card"
+          variants={fadeInUp}
+          whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          href="https://cafecurator.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textDecoration: "none",
+          }}
+        >
+          <motion.div
+            className="project-image"
+            style={{
+              backgroundImage: "url('/projects/Cafe-Finder.png')",
+            }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          />
+          <h3>Cafe Finder</h3>
+          <p>
+            Cafe Finder is a sleek, location-based app for discovering top cafes
+            nearby.Built with React and Google Maps API, It features real-time
+            search, interactive maps, curated user reviews, saving favorite
+            places, and instant navigation to selected cafes.
+          </p>
+          <div className="project-tech">
+            <span>React</span>
+            <span>Google Places API</span>
+            <span>Vite web app</span>
+          </div>
+        </motion.a>
         <motion.a
           className="project-card"
           variants={fadeInUp}
