@@ -47,17 +47,29 @@ export const Hero = () => {
             I'm a Full Stack Developer
           </motion.h2>
           <motion.p className="hero-description" variants={fadeInup}>
-            Full Stack Developer and AWS Certified Solutions Architect (SAA-C03)
-            with nearly 5 years of experience in building scalable web
-            applications and backend systems across fintech, logistics, and IT
-            services domains. Proficient in modern JavaScript frameworks like
-            React.js and Node.js, with hands-on expertise in PostgreSQL, RESTful
-            API design, serverless architecture (AWS Lambda), and CI/CD
-            automation using GitLab and Docker.. Recognized for delivering
-            production-grade software with clean code, responsive UI/UX, and
-            real-time data integration. strong background in Software
-            Development Lifecycle and collaboration with cross-functional teams
-            in Agile environments.
+            An engineer who makes ideas real faster than deadlines can blink. I
+            build applications from the ground up using React, Node, PostgreSQL,
+            and AWS, and I’ve scaled fintech, logistics, and insurance platforms
+            to run 30–70% faster while shipping 15+ features in record time. By
+            night, I wonder why semicolons choose the worst possible moments to
+            disappear.
+            <br /> As an AWS Certified Solutions Architect, I’m not just writing
+            code I’m designing systems that stay reliable when traffic spikes,
+            scale as businesses grow, and refuse to break even when you look at
+            them funny. My toolkit includes automation, performance tuning, and
+            the occasional motivational pep talk to stubborn APIs. I lean toward
+            frontend and design because code is my craft, but design is where
+            the artist in me comes alive.
+            <br /> To me, software engineering isn’t just about shipping
+            features; it’s about creating experiences. That’s why I love adding
+            polish with subtle CSS animations, automating pipelines that save
+            hours, and mentoring others so they don’t repeat the mistakes I
+            definitely didn’t make (well, maybe once or twice).
+            <br />
+            Outside of work, you’ll find me debating what to order, geeking out
+            as a cinema buff, or tinkering with side projects to keep my
+            curiosity sharp. <br /> Have a look at my resume to see my technical
+            qualifications in detail.
           </motion.p>
           <motion.div className="cta-buttons" variants={staggerContainer}>
             <motion.a
