@@ -47,12 +47,12 @@ export const Hero = () => {
             I'm a Full Stack Developer
           </motion.h2>
           <motion.p className="hero-description" variants={fadeInup}>
-            An engineer who makes ideas real faster than deadlines can blink. I
-            build applications from the ground up using React, Node, PostgreSQL,
-            and AWS, and I’ve scaled fintech, logistics, and insurance platforms
-            to run 30–70% faster while shipping 15+ features in record time. By
-            night, I wonder why semicolons choose the worst possible moments to
-            disappear.
+            An engineer who makes ideas real faster than deadlines can blink.By
+            day I build applications from the ground up using React, Node,
+            PostgreSQL, and AWS, and I’ve scaled data-intensive, full-stack
+            applications to improve data retrieval by 35% while shipping 15+
+            product features in six months. By night, I wonder why semicolons
+            choose the worst possible moments to disappear.
             <br /> As an AWS Certified Solutions Architect, I’m not just writing
             code I’m designing systems that stay reliable when traffic spikes,
             scale as businesses grow, and refuse to break even when you look at

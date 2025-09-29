@@ -53,7 +53,7 @@ export const NavBar = () => {
         </motion.li>
         <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           <a
-            href="/projects/PremPuri_Goswami%20Resume.pdf"
+            href="/projects/PremPuriGoswami.pdf"
             target="_blank"
             rel="noopener noreferrer"
             title="View Resume"
