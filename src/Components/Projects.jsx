@@ -73,6 +73,43 @@ export const Projects = () => {
 
         <motion.a
           className="project-card"
+          href="https://github.com/prem-goswami/ApplicationTracker-N8N"
+          target="_blank"
+          rel="noopener noreferrer"
+          variants={fadeInUp}
+          whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textDecoration: "none",
+          }}
+        >
+          <motion.div
+            className="project-image"
+            style={{ backgroundImage: "url('/projects/N8n-Workflow.png')" }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+          />
+          <h3>AI-Powered Job Tracker</h3>
+          <p>
+            This project is an AI-powered assistant that automates job
+            application tracking through a simple WhatsApp chat. It uses a
+            self-hosted n8n workflow and Google's Gemini AI to understand
+            natural language commands, allowing users to instantly log new jobs,
+            update statuses, and list applications in a Google Sheet without any
+            manual data entry. The entire system is built on a no-cost stack
+            using Docker, demonstrating a practical application of
+            conversational AI and workflow automation.
+          </p>
+          <div className="project-tech">
+            <span>n8n</span>
+            <span>Google Gemini AI</span>
+            <span>Docker</span>
+            <span>WhatsApp Cloud API</span>
+          </div>
+        </motion.a>
+
+        <motion.a
+          className="project-card"
           variants={fadeInUp}
           whileHover={{ y: -10, transition: { duration: 0.2 } }}
           href="https://trendingmoviesreact.netlify.app/"
