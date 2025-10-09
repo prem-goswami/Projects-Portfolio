@@ -91,14 +91,11 @@ export const Projects = () => {
           />
           <h3>AI-Powered Job Tracker</h3>
           <p>
-            This project is an AI-powered assistant that automates job
-            application tracking through a simple WhatsApp chat. It uses a
-            self-hosted n8n workflow and Google's Gemini AI to understand
-            natural language commands, allowing users to instantly log new jobs,
-            update statuses, and list applications in a Google Sheet without any
-            manual data entry. The entire system is built on a no-cost stack
-            using Docker, demonstrating a practical application of
-            conversational AI and workflow automation.
+            This AI assistant automates job application tracking through
+            WhatsApp. Built with a self-hosted n8n workflow, Google's Gemini AI,
+            and Docker, it processes natural language commands to instantly
+            manage a job-tracking Google Sheet, completely eliminating manual
+            data entry.
           </p>
           <div className="project-tech">
             <span>n8n</span>
