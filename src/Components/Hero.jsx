@@ -1,76 +1,110 @@
-import { easeIn, motion, wrap } from "framer-motion";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./Components-css/Hero.css";
+
 const fadeInup = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
   transition: { duration: 0.6, ease: "easeOut" },
 };
 
 const staggerContainer = {
-  animate: {
+  initial: {},
+  whileInView: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };
 
 export const Hero = () => {
+  const [showFullBio, setShowFullBio] = useState(false);
+
+  const bioSections = [
+    {
+      title: "Engineering Impact",
+      text: "An engineer who makes ideas real faster than deadlines can blink.By day I build applications from the ground up using React, Node, PostgreSQL, and AWS, and I’ve scaled data-intensive, full-stack applications to improve data retrieval by 35% while shipping 15+ product features in six months. By night, I wonder why semicolons choose the worst possible moments to disappear.",
+    },
+    {
+      title: "Cloud & Architecture",
+      text: "As an AWS Certified Solutions Architect, I’m not just writing code I’m designing systems that stay reliable when traffic spikes, scale as businesses grow, and refuse to break even when you look at them funny. My toolkit includes automation, performance tuning, and the occasional motivational pep talk to stubborn APIs. I lean toward frontend and design because code is my craft, but design is where the artist in me comes alive.",
+    },
+    {
+      title: "Craft & Mentorship",
+      text: "To me, software engineering isn’t just about shipping features; it’s about creating experiences. That’s why I love adding polish with subtle CSS animations, automating pipelines that save hours, and mentoring others so they don’t repeat the mistakes I definitely didn’t make (well, maybe once or twice).",
+    },
+    {
+      title: "Beyond Work",
+      text: "Outside of work, you’ll find me debating what to order, geeking out as a cinema buff, or tinkering with side projects to keep my curiosity sharp. Have a look at my resume to see my technical qualifications in detail.",
+    },
+  ];
+
+  const visibleBioSections = showFullBio
+    ? bioSections
+    : bioSections.slice(0, 2);
+
   return (
     <motion.section
-      id="hero"
+      id="home"
       className="hero"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, amount: 0.15 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
     >
       <div className="hero-container">
         <motion.div
           className="hero-content"
           variants={staggerContainer}
           initial="initial"
-          animate="animate"
+          whileInView="whileInView"
+          viewport={{ once: false, amount: 0.2 }}
         >
           <motion.div className="hero-badge">
-            <span>Hello I'm 👋🏻</span>
+            <span>Available for full-time opportunities</span>
           </motion.div>
-          <motion.h1
-            className="glitch"
-            variants={fadeInup}
-            whileHover={{ scale: 1.05 }}
-          >
+          <motion.h1 className="glitch" variants={fadeInup}>
             Prem Goswami
           </motion.h1>
           <motion.h2 className="hero-subtitle">
-            I'm a Full Stack Developer
+            Full Stack Developer & AWS Certified Solutions Architect
           </motion.h2>
-          <motion.p className="hero-description" variants={fadeInup}>
-            An engineer who makes ideas real faster than deadlines can blink.By
-            day I build applications from the ground up using React, Node,
-            PostgreSQL, and AWS, and I’ve scaled data-intensive, full-stack
-            applications to improve data retrieval by 35% while shipping 15+
-            product features in six months. By night, I wonder why semicolons
-            choose the worst possible moments to disappear.
-            <br /> As an AWS Certified Solutions Architect, I’m not just writing
-            code I’m designing systems that stay reliable when traffic spikes,
-            scale as businesses grow, and refuse to break even when you look at
-            them funny. My toolkit includes automation, performance tuning, and
-            the occasional motivational pep talk to stubborn APIs. I lean toward
-            frontend and design because code is my craft, but design is where
-            the artist in me comes alive.
-            <br /> To me, software engineering isn’t just about shipping
-            features; it’s about creating experiences. That’s why I love adding
-            polish with subtle CSS animations, automating pipelines that save
-            hours, and mentoring others so they don’t repeat the mistakes I
-            definitely didn’t make (well, maybe once or twice).
-            <br />
-            Outside of work, you’ll find me debating what to order, geeking out
-            as a cinema buff, or tinkering with side projects to keep my
-            curiosity sharp. <br /> Have a look at my resume to see my technical
-            qualifications in detail.
-          </motion.p>
+          <motion.div
+            className={`hero-story ${showFullBio ? "expanded" : ""}`}
+            variants={fadeInup}
+          >
+            {visibleBioSections.map((section) => (
+              <div key={section.title} className="hero-description">
+                <h3 className="hero-description-title">{section.title}</h3>
+                <p>{section.text}</p>
+              </div>
+            ))}
+          </motion.div>
+          <button
+            className="hero-toggle-btn"
+            type="button"
+            onClick={() => setShowFullBio((prev) => !prev)}
+            aria-expanded={showFullBio}
+          >
+            {showFullBio ? "Show less" : "Read full story"}
+          </button>
+
+          <motion.div className="hero-metrics" variants={staggerContainer}>
+            <div className="metric-card">
+              <strong>80+</strong>
+              <span>Features shipped</span>
+            </div>
+            <div className="metric-card">
+              <strong>35%</strong>
+              <span>Data retrieval improvement</span>
+            </div>
+            <div className="metric-card">
+              <strong>AWS</strong>
+              <span>SAA-C03 certified</span>
+            </div>
+          </motion.div>
+
           <motion.div className="cta-buttons" variants={staggerContainer}>
             <motion.a
               className="cta-primary"
@@ -78,15 +112,32 @@ export const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View my Work
+              View Projects
+            </motion.a>
+            <motion.a
+              className="cta-secondary"
+              href="/projects/PremPuriGoswami.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download Resume
             </motion.a>
             <motion.div className="social-links" variants={staggerContainer}>
-              <motion.a target="_blank" href="https://github.com/prem-goswami">
+              <motion.a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/prem-goswami"
+                aria-label="GitHub"
+              >
                 <i className="fab fa-github" />
               </motion.a>
               <motion.a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/prempurigoswami/"
+                aria-label="LinkedIn"
               >
                 <i className="fab fa-linkedin" />
               </motion.a>
@@ -96,77 +147,23 @@ export const Hero = () => {
         <motion.div
           className="hero-image-container"
           initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.25 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <motion.div className="portfolioPhoto">
-            <img src="/projects/PortfolioPic.jpg" alt="Portfolio-Pic" />{" "}
-          </motion.div>
-          <motion.div
-            className="hero-image-inner"
-            whileHover={{ scale: 1.06 }}
-            style={{ width: "100%", height: "100%" }}
-          >
-            <div className="code-display">
-              <SyntaxHighlighter
-                language="javascript"
-                style={vscDarkPlus}
-                customStyle={{
-                  margin: 0,
-                  flexWrap: "wrap",
-                  padding: "10px",
-                  borderRadius: "16px",
-                  background:
-                    "linear-gradient(145deg, rgba(30,41,59,0.95), rgba(17,24,39,0.95))", // gradient dark bg
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.25)", // soft shadow for depth
-                  backdropFilter: "blur(12px)", // frosted glass look
-                  border: "1px solid rgba(255,255,255,0.05)", // subtle border for structure
-                  fontSize: "0.95rem",
-                  lineHeight: "1.6",
-                  color: "#e2e8f0", // light text color for readability
-                  overflowX: "auto", // prevent code from breaking layout
-                }}
-              >
-                {`
-  {
-    name: "Prem Goswami",
-    title: "Full Stack Developer | 
-    AWS Certified Solutions Architect (SAA-C03)",
-    coreSkills: [
-      "Full Stack Development (React, Node.js, Python)",
-      "AWS Cloud Architecture & Serverless Solutions",
-      "REST API Design & Optimization",
-      "CI/CD Automation with GitLab & Docker",
-      "Database Design (PostgreSQL, MySQL, DynamoDB)",
-      "Agile & Scrum Methodologies",
-      "Version Control (Git & GitHub)"
-    ],
-    "My mission is to leverage full-stack development, 
-    cloud computing (AWS),and automation to build efficient,
-    scalable, and secure web applications.By integrating robust
-    APIs, optimizing system performance, and fostering
-    collaborative development, I aim to deliver impactful 
-    software solutionsthat drive business growth and user 
-    satisfaction."
-  };
-`}
-              </SyntaxHighlighter>
-            </div>
-            <motion.div
-              className="card-content"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="floating-card">
-                <div className="card-content">
-                  <span className="card-icon">🖥</span>
-                  <span className="card-text">
-                    Currently working on Cloud Deployments
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+          <div className="profile-card">
+            <img
+              className="profile-image"
+              src="/projects/PortfolioPic.jpg"
+              alt="Prem Goswami"
+            />
+            <h3>Building reliable products end-to-end</h3>
+            <p>
+              From polished interfaces to resilient APIs and cloud deployment, I
+              focus on outcomes that improve user experience and business
+              performance.
+            </p>
+          </div>
         </motion.div>
       </div>
     </motion.section>

@@ -15,197 +15,111 @@ const staggerContainer = {
 };
 
 export const Projects = () => {
+  const projects = [
+    {
+      title: "Animated Website",
+      description:
+        "Interactive landing experience with synchronized scroll animations, audio integration, and performance-optimized transitions.",
+      image: "/projects/animated-website.png",
+      link: "https://animatedwebsite-zentry.netlify.app/",
+      tech: ["React", "GSAP", "CSS"],
+    },
+    {
+      title: "AI-Powered Job Tracker",
+      description:
+        "Automated WhatsApp-based job tracking workflow using n8n, Gemini AI, Docker, and Google Sheets integration.",
+      image: "/projects/N8n-Workflow.png",
+      link: "https://github.com/prem-goswami/ApplicationTracker-N8N",
+      tech: ["n8n", "Gemini AI", "Docker", "WhatsApp API"],
+    },
+    {
+      title: "Trending Movies",
+      description:
+        "Movie discovery platform with API-powered data, debounced search, and responsive interaction patterns.",
+      image: "/projects/Movies.png",
+      link: "https://trendingmoviesreact.netlify.app/",
+      tech: ["React", "Firebase", "API Integration"],
+    },
+    {
+      title: "Cafe Finder",
+      description:
+        "Location-based web app to explore nearby cafes with search, interactive maps, and quick navigation support.",
+      image: "/projects/Cafe-Finder.png",
+      link: "https://cafecurator.netlify.app/",
+      tech: ["React", "Google Places API", "Vite"],
+    },
+    {
+      title: "Crown Clothing",
+      description:
+        "Modern e-commerce storefront featuring catalog browsing, cart functionality, and user authentication flow.",
+      image: "/projects/crown-clothing.png",
+      link: "https://corwn-clothing.netlify.app/",
+      tech: ["React", "TypeScript", "Tailwind CSS"],
+    },
+  ];
+
   return (
     <motion.section
       id="projects"
       className="projects"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.6 }}
     >
       <motion.h2
         variants={fadeInUp}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.2 }}
       >
-        My Projects
+        Featured Projects
       </motion.h2>
+      <motion.p
+        className="section-subtitle"
+        variants={fadeInUp}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        Selected work focused on product quality, scalable architecture, and
+        clean user experiences.
+      </motion.p>
       <motion.div
         className="project-grid"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.15 }}
       >
-        <motion.a
-          className="project-card"
-          href="https://animatedwebsite-zentry.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textDecoration: "none",
-          }}
-        >
-          <motion.div
-            className="project-image"
-            style={{ backgroundImage: "url('/projects/animated-website.png')" }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-          />
-          <h3> Animated Website</h3>
-          <p>
-            Developed a highly animated, interactive website using
-            scroll-triggered GSAP animations synchronized with audio, delivering
-            a cinematic and immersive user experience with stunning UI/UX design
-            and smooth performance across devices.
-          </p>
-          <div className="project-tech">
-            <span>React.js</span>
-            <span>GSAP</span>
-            <span>CSS5</span>
-          </div>
-        </motion.a>
-
-        <motion.a
-          className="project-card"
-          href="https://github.com/prem-goswami/ApplicationTracker-N8N"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textDecoration: "none",
-          }}
-        >
-          <motion.div
-            className="project-image"
-            style={{ backgroundImage: "url('/projects/N8n-Workflow.png')" }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-          />
-          <h3>AI-Powered Job Tracker</h3>
-          <p>
-            This AI assistant automates job application tracking through
-            WhatsApp. Built with a self-hosted n8n workflow, Google's Gemini AI,
-            and Docker, it processes natural language commands to instantly
-            manage a job-tracking Google Sheet, completely eliminating manual
-            data entry.
-          </p>
-          <div className="project-tech">
-            <span>n8n</span>
-            <span>Google Gemini AI</span>
-            <span>Docker</span>
-            <span>WhatsApp Cloud API</span>
-          </div>
-        </motion.a>
-
-        <motion.a
-          className="project-card"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
-          href="https://trendingmoviesreact.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textDecoration: "none",
-          }}
-        >
-          <motion.div
-            className="project-image"
+        {projects.map((project) => (
+          <motion.a
+            key={project.title}
+            className="project-card"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={fadeInUp}
+            whileHover={{ y: -8, transition: { duration: 0.2 } }}
             style={{
-              backgroundImage: "url('/projects/Movies.png')",
+              display: "flex",
+              flexDirection: "column",
+              textDecoration: "none",
             }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          />
-          <h3>Trending Movies</h3>
-          <p>
-            A dynamic movie discovery app with API-driven content, optimized
-            with debounced search and responsive UI for a seamless user
-            experience.
-          </p>
-          <div className="project-tech">
-            <span>React</span>
-            <span>Firebase</span>
-            <span>Stripe AP</span>
-          </div>
-        </motion.a>
-
-        <motion.a
-          className="project-card"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
-          href="https://cafecurator.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textDecoration: "none",
-          }}
-        >
-          <motion.div
-            className="project-image"
-            style={{
-              backgroundImage: "url('/projects/Cafe-Finder.png')",
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          />
-          <h3>Cafe Finder</h3>
-          <p>
-            Cafe Finder is a sleek, location-based app for discovering top cafes
-            nearby.Built with React and Google Maps API, It features real-time
-            search, interactive maps, curated user reviews, saving favorite
-            places, and instant navigation to selected cafes.
-          </p>
-          <div className="project-tech">
-            <span>React</span>
-            <span>Google Places API</span>
-            <span>Vite web app</span>
-          </div>
-        </motion.a>
-        <motion.a
-          className="project-card"
-          variants={fadeInUp}
-          whileHover={{ y: -10, transition: { duration: 0.2 } }}
-          href="https://corwn-clothing.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textDecoration: "none",
-          }}
-        >
-          <motion.div
-            className="project-image"
-            style={{
-              backgroundImage: "url('/projects/crown-clothing.png')",
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          />
-          <h3>Crown Clothing</h3>
-          <p>
-            A sleek e-commerce application for a clothing brand, featuring
-            product listings, shopping cart functionality, and user
-            authentication.
-          </p>
-          <div className="project-tech">
-            <span>React</span>
-            <span>TypeScript</span>
-            <span>TailwindCSS</span>
-          </div>
-        </motion.a>
+          >
+            <motion.div
+              className="project-image"
+              style={{ backgroundImage: `url('${project.image}')` }}
+            />
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div className="project-tech">
+              {project.tech.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </motion.a>
+        ))}
       </motion.div>
     </motion.section>
   );

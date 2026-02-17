@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { NavBar } from "./NavBar";
 import { Hero } from "./Components/Hero";
 import { Projects } from "./Components/Projects";
+import { Experience } from "./Components/Experience";
 import { Contact } from "./Components/Contact";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -10,6 +11,7 @@ import LoadingScreen from "./Components/LoadingScreen";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
@@ -29,6 +31,7 @@ function App() {
       <NavBar />
       <Hero />
       <Projects />
+      <Experience />
       <Contact />
       <motion.footer
         className="footer"
@@ -37,7 +40,7 @@ function App() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <p> &copy; 2025 • Prem Goswami • All rights reserved.</p>
+        <p>&copy; {currentYear} Prem Goswami. All rights reserved.</p>
       </motion.footer>
     </div>
   );

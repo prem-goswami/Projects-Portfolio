@@ -4,19 +4,18 @@ import { useState } from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
   transition: { duration: 0.6 },
 };
 
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 export const Contact = () => {
+  const contactHighlights = [
+    "Open to full-time software engineering roles",
+    "Fast response for project collaboration",
+    "Available for remote and hybrid opportunities",
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -56,7 +55,7 @@ export const Contact = () => {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-        }
+        },
       );
 
       setFormStatus({
@@ -87,25 +86,52 @@ export const Contact = () => {
       className="contact"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.6 }}
     >
       <motion.h2
         variants={fadeInUp}
         initial="initial"
-        animate="animate"
-        viewport={{ once: true }}
+        whileInView="whileInView"
+        viewport={{ once: false, amount: 0.2 }}
       >
-        Get in Touch
+        Let’s Build Something Great
       </motion.h2>
 
-      <motion.div className="contact-content" variants={fadeInUp}>
+      <motion.p
+        className="section-subtitle"
+        variants={fadeInUp}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        Have a role or project in mind? Share the details and I’ll get back to
+        you shortly.
+      </motion.p>
+
+      <motion.div
+        className="contact-content"
+        variants={fadeInUp}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <div className="contact-intro">
+          {contactHighlights.map((item) => (
+            <div key={item} className="contact-point">
+              <span>•</span>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+
         <motion.form className="contact-form" onSubmit={handleSubmit}>
           <motion.input
             type="text"
             name="name"
             placeholder="Your Name..."
             required
+            value={formData.name}
             whileFocus={{ scale: 1.02 }}
             onChange={handleInputChange}
           />
@@ -114,6 +140,7 @@ export const Contact = () => {
             name="email"
             placeholder="Your Email..."
             required
+            value={formData.email}
             whileFocus={{ scale: 1.02 }}
             onChange={handleInputChange}
           />
@@ -121,6 +148,7 @@ export const Contact = () => {
             name="message"
             placeholder="Your Message..."
             required
+            value={formData.message}
             whileFocus={{ scale: 1.02 }}
             onChange={handleInputChange}
           />
