@@ -33,6 +33,14 @@ export const Projects = () => {
       tech: ["n8n", "Gemini AI", "Docker", "WhatsApp API"],
     },
     {
+      title: "DSA Student Buddy",
+      description:
+        "Mentor-style Chrome extension for LeetCode that provides progressive hints with Gemini-powered guidance, model fallback handling, and strict no-solution guardrails.",
+      image: "/projects/Dsa-Buddy.png",
+      link: "https://github.com/prem-goswami/DSA-buddy",
+      tech: ["Vite", "React", "Manifest V3", "Gemini API"],
+    },
+    {
       title: "Trending Movies",
       description:
         "Movie discovery platform with API-powered data, debounced search, and responsive interaction patterns.",
