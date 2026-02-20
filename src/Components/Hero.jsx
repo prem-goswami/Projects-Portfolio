@@ -103,6 +103,10 @@ export const Hero = () => {
               <strong>AWS</strong>
               <span>SAA-C03 certified</span>
             </div>
+            <div className="metric-card">
+              <strong>LLM</strong>
+              <span>Orchestration</span>
+            </div>
           </motion.div>
 
           <motion.div className="cta-buttons" variants={staggerContainer}>

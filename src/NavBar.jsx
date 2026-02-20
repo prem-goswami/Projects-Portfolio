@@ -27,7 +27,7 @@ export const NavBar = () => {
         ))}
         <li>
           <a
-            href="/projects/PremPuriGoswami.pdf"
+            href="/projects/Prem Goswami.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-link"
