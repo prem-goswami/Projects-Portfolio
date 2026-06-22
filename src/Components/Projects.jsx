@@ -33,6 +33,14 @@ export const Projects = () => {
       tech: ["n8n", "Gemini AI", "Docker", "WhatsApp API"],
     },
     {
+      title: "Prompt-Engineered Conversational API",
+      description:
+        "Built and deployed a production-ready conversational AI backend with FastAPI and GPT-4o-mini, supporting 3 distinct personas via runtime-configurable system prompts and few-shot context injection. Implemented real-time token monitoring with live USD cost estimation for usage transparency, and strengthened security with XML-structured input handling plus session-based memory to reduce prompt-injection risk. Hosted on Railway.",
+      image: "/projects/ai_chatbot_portfolio.png",
+      link: "https://github.com/prem-goswami/agent-service-backend",
+      tech: ["FastAPI", "Prompt Engineering", "Railway", "GPT-4o-mini"],
+    },
+    {
       title: "DSA Student Buddy",
       description:
         "Mentor-style Chrome extension for LeetCode that provides progressive hints with Gemini-powered guidance, model fallback handling, and strict no-solution guardrails.",
