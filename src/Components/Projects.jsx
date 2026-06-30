@@ -25,6 +25,21 @@ export const Projects = () => {
       tech: ["React", "GSAP", "CSS"],
     },
     {
+      title: "Advanced RAG & Semantic Search",
+      description:
+        "Production-grade hybrid search engine featuring pgvector and Pinecone backends with cross-encoder neural reranking.\nSupports 8 architectural routing methods and strict citation-grounded generation to eliminate hallucinations.",
+      image: "/projects/advanced-ragpipeline.png",
+      link: "https://github.com/prem-goswami/advanced-rag-pipeline",
+      tech: [
+        "FastAPI",
+        "pgvector",
+        "Pinecone",
+        "LangChain",
+        "BM25",
+        "Cross-Encoders",
+      ],
+    },
+    {
       title: "AI-Powered Job Tracker",
       description:
         "Automated WhatsApp-based job tracking workflow using n8n, Gemini AI, Docker, and Google Sheets integration.",
@@ -35,7 +50,7 @@ export const Projects = () => {
     {
       title: "Prompt-Engineered Conversational API",
       description:
-        "Built and deployed a production-ready conversational AI backend with FastAPI and GPT-4o-mini, supporting 3 distinct personas via runtime-configurable system prompts and few-shot context injection. Implemented real-time token monitoring with live USD cost estimation for usage transparency, and strengthened security with XML-structured input handling plus session-based memory to reduce prompt-injection risk. Hosted on Railway.",
+        "Production-ready FastAPI conversational backend supporting 3 personas via runtime-configurable system prompts.\nFeatures real-time token cost tracking and XML-structured input validation to mitigate prompt-injection risks.",
       image: "/projects/ai_chatbot_portfolio.png",
       link: "https://github.com/prem-goswami/agent-service-backend",
       tech: ["FastAPI", "Prompt Engineering", "Railway", "GPT-4o-mini"],
